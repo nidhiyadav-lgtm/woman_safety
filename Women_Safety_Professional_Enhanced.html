@@ -1,0 +1,3521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Women Safety & Mobile App Awareness</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080811;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ================= GLOBAL ================= */
+
+:root{
+    --pink:#ec4899;
+    --purple:#8b5cf6;
+    --blue:#6366f1;
+    --dark:#080811;
+    --card:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.10);
+    --muted:#a8a8b8;
+}
+
+button{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ================= AUTH ================= */
+
+#authPage{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+
+    background:
+        radial-gradient(circle at 10% 10%,rgba(236,72,153,.22),transparent 30%),
+        radial-gradient(circle at 90% 90%,rgba(124,58,237,.25),transparent 30%),
+        linear-gradient(135deg,#090914,#111124 50%,#0c0716);
+}
+
+.auth-container{
+    width:950px;
+    min-height:620px;
+    display:grid;
+    grid-template-columns:45% 55%;
+
+    border:1px solid var(--border);
+    border-radius:30px;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(25px);
+
+    box-shadow:0 30px 100px rgba(0,0,0,.55);
+}
+
+.brand{
+    padding:50px 42px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(236,72,153,.24),
+            rgba(124,58,237,.18)
+        );
+
+    border-right:1px solid var(--border);
+}
+
+.brand-logo{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:34px;
+    margin-bottom:25px;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    box-shadow:0 15px 40px rgba(236,72,153,.3);
+}
+
+.brand h1{
+    font-size:34px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+.gradient-text{
+    background:linear-gradient(90deg,#f472b6,#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.brand p{
+    color:#b8b7c8;
+    line-height:1.7;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.brand-feature{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    margin:14px 0;
+    color:#dddbea;
+    font-size:14px;
+}
+
+.brand-feature-icon{
+    width:38px;
+    height:38px;
+    border-radius:11px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.08);
+}
+
+.auth-side{
+    padding:48px 55px;
+    display:flex;
+    align-items:center;
+}
+
+.auth-content{
+    width:100%;
+    max-width:390px;
+}
+
+.auth-screen{
+    display:none;
+}
+
+.auth-screen.active{
+    display:block;
+    animation:fadeUp .35s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.auth-title{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.auth-subtitle{
+    color:#9898aa;
+    font-size:14px;
+    margin-bottom:28px;
+}
+
+.input-group{
+    margin-bottom:17px;
+}
+
+.input-group label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:#d9d7e6;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box input{
+    width:100%;
+    height:52px;
+
+    padding:0 45px 0 16px;
+
+    border-radius:13px;
+    outline:none;
+
+    border:1px solid var(--border);
+
+    background:rgba(0,0,0,.20);
+
+    color:#fff;
+
+    transition:.25s;
+}
+
+.input-box input:focus{
+    border-color:var(--pink);
+    box-shadow:0 0 0 4px rgba(236,72,153,.10);
+}
+
+.input-icon{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#777789;
+    cursor:pointer;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:5px 0 22px;
+    font-size:13px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#aaa9b8;
+}
+
+.remember input{
+    accent-color:var(--pink);
+}
+
+.link{
+    color:#f472b6;
+    cursor:pointer;
+}
+
+.primary-btn{
+    width:100%;
+    height:52px;
+
+    border:0;
+    border-radius:13px;
+
+    color:#fff;
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+
+    box-shadow:0 12px 30px rgba(236,72,153,.25);
+
+    transition:.25s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-2px);
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#6e6e80;
+    font-size:12px;
+
+    margin:23px 0;
+}
+
+.divider:before,
+.divider:after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:var(--border);
+}
+
+.google-btn{
+    width:100%;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    border-radius:13px;
+    border:1px solid var(--border);
+
+    background:#fff;
+    color:#202124;
+
+    font-weight:600;
+    cursor:pointer;
+}
+
+.google-logo{
+    font-weight:bold;
+    font-size:18px;
+}
+
+.bottom-text{
+    text-align:center;
+    margin-top:23px;
+    color:#898899;
+    font-size:13px;
+}
+
+.bottom-text span{
+    color:#f472b6;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.message{
+    display:none;
+    margin-top:13px;
+    padding:11px;
+    border-radius:10px;
+    text-align:center;
+    font-size:13px;
+}
+
+.message.success{
+    display:block;
+    color:#7ee7a8;
+    background:rgba(34,197,94,.10);
+}
+
+.message.error{
+    display:block;
+    color:#ff8d9b;
+    background:rgba(239,68,68,.10);
+}
+
+.back{
+    margin-bottom:20px;
+    color:#aaa;
+    cursor:pointer;
+    font-size:13px;
+}
+
+
+/* ================= HOME ================= */
+
+#homePage{
+    display:none;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 20% 0%,rgba(236,72,153,.12),transparent 25%),
+        radial-gradient(circle at 100% 50%,rgba(124,58,237,.13),transparent 30%),
+        #080811;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(8,8,17,.82);
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+}
+
+.nav-logo{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    font-size:17px;
+    font-weight:700;
+}
+
+.nav-logo-icon{
+    width:40px;
+    height:40px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.nav-links a{
+    color:#b8b7c7;
+    padding:10px 12px;
+    border-radius:9px;
+    font-size:13px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#fff;
+    background:rgba(255,255,255,.07);
+}
+
+.nav-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.user-name{
+    font-size:13px;
+    color:#d9d8e5;
+}
+
+.logout-btn{
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    color:#ddd;
+    padding:8px 13px;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:#fff;
+    font-size:25px;
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:760px;
+
+    padding:150px 7% 80px;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:50px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    padding:8px 13px;
+    border-radius:50px;
+
+    color:#f9a8d4;
+    background:rgba(236,72,153,.10);
+    border:1px solid rgba(236,72,153,.20);
+
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    line-height:1.05;
+    max-width:700px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#f472b6,#a78bfa,#60a5fa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    max-width:600px;
+    color:#aaa9b9;
+    line-height:1.8;
+    margin:22px 0 30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:13px;
+}
+
+.hero-btn{
+    padding:13px 21px;
+    border-radius:11px;
+    border:0;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.hero-btn.primary{
+    color:#fff;
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+}
+
+.hero-btn.secondary{
+    color:#ddd;
+    background:rgba(255,255,255,.06);
+    border:1px solid var(--border);
+}
+
+
+/* ================= SOS PANEL ================= */
+
+.sos-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.sos-card{
+    width:370px;
+    min-height:440px;
+
+    padding:32px;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:0 25px 70px rgba(0,0,0,.40);
+}
+
+.sos-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.sos-header h3{
+    font-size:18px;
+}
+
+.status{
+    font-size:11px;
+    color:#72e6a0;
+    background:rgba(34,197,94,.10);
+    padding:6px 9px;
+    border-radius:20px;
+}
+
+.sos-button{
+    width:190px;
+    height:190px;
+
+    border-radius:50%;
+    border:13px solid rgba(236,72,153,.10);
+
+    background:
+        radial-gradient(circle,#ef4444 40%,#be123c 100%);
+
+    box-shadow:
+        0 0 0 10px rgba(239,68,68,.05),
+        0 0 60px rgba(239,68,68,.25);
+
+    color:#fff;
+
+    font-size:30px;
+    font-weight:900;
+
+    cursor:pointer;
+
+    display:block;
+    margin:25px auto;
+
+    transition:.2s;
+}
+
+.sos-button:hover{
+    transform:scale(1.04);
+}
+
+.sos-button:active{
+    transform:scale(.96);
+}
+
+.sos-note{
+    text-align:center;
+    color:#898899;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.emergency-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:22px;
+}
+
+.emergency-btn{
+    padding:13px 8px;
+    border-radius:11px;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.05);
+    color:#ddd;
+
+    cursor:pointer;
+    font-size:12px;
+}
+
+.emergency-btn:hover{
+    background:rgba(255,255,255,.10);
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section{
+    padding:90px 7%;
+}
+
+.section-header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.section-header .tag{
+    color:#f472b6;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.section-header h2{
+    font-size:38px;
+    margin:10px 0;
+}
+
+.section-header p{
+    color:#9998a8;
+    line-height:1.7;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    padding:25px;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    background:rgba(255,255,255,.045);
+
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(236,72,153,.30);
+}
+
+.card-icon{
+    width:48px;
+    height:48px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:14px;
+
+    background:rgba(236,72,153,.10);
+
+    font-size:23px;
+
+    margin-bottom:17px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#9998a8;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* ================= SAFETY APPS ================= */
+
+.app-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.app-icon{
+    width:55px;
+    height:55px;
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:15px;
+
+    font-size:25px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(236,72,153,.18),
+        rgba(124,58,237,.18)
+    );
+}
+
+
+/* ================= EMERGENCY SECTION ================= */
+
+.emergency-section{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.07),
+            rgba(124,58,237,.06)
+        );
+}
+
+.emergency-number{
+    text-align:center;
+    font-size:70px;
+    font-weight:900;
+
+    background:linear-gradient(90deg,#ef4444,#f472b6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    margin:20px 0;
+}
+
+.call-112{
+    display:block;
+    width:220px;
+    margin:auto;
+
+    text-align:center;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    background:#dc2626;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+    max-width:850px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.contact-card{
+    padding:25px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:rgba(255,255,255,.05);
+}
+
+.contact-card h3{
+    margin-bottom:8px;
+}
+
+.contact-card p{
+    color:#9998a8;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.contact-card a{
+    display:inline-block;
+    margin-top:15px;
+
+    color:#f472b6;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:35px 7%;
+
+    border-top:1px solid var(--border);
+
+    color:#777789;
+
+    text-align:center;
+
+    font-size:12px;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(8px);
+
+    z-index:2000;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:430px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:#151521;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+
+.modal-box h2{
+    margin-bottom:10px;
+}
+
+.modal-box p{
+    color:#9998a8;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.modal-input{
+    width:100%;
+    height:48px;
+
+    padding:0 14px;
+
+    border-radius:11px;
+
+    border:1px solid var(--border);
+
+    background:#0d0d17;
+
+    color:#fff;
+
+    outline:none;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+    margin-top:17px;
+}
+
+.modal-actions button{
+    flex:1;
+    height:45px;
+    border-radius:10px;
+    border:0;
+    cursor:pointer;
+}
+
+.cancel{
+    color:#ddd;
+    background:#292938;
+}
+
+.confirm{
+    color:#fff;
+    background:#dc2626;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:75px;
+        left:0;
+        width:100%;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        padding:15px;
+
+        background:#0d0d18;
+
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:13px;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .user-name{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding-top:125px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .auth-container{
+        grid-template-columns:1fr;
+        width:100%;
+        max-width:480px;
+    }
+
+    .brand{
+        display:none;
+    }
+
+    .auth-side{
+        padding:35px 22px;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .hero h1{
+        font-size:37px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .sos-card{
+        width:100%;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:70px 5%;
+    }
+
+    .section-header h2{
+        font-size:30px;
+    }
+}
+
+/* ================= ENHANCED PROFESSIONAL DASHBOARD ================= */
+.quick-tools{
+    padding:0 7% 35px;
+    margin-top:-15px;
+}
+.quick-tools-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+.tool-btn{
+    min-height:105px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:rgba(255,255,255,.055);
+    color:#fff;
+    padding:18px 12px;
+    cursor:pointer;
+    transition:.25s;
+    text-align:left;
+}
+.tool-btn:hover{
+    transform:translateY(-4px);
+    border-color:rgba(236,72,153,.45);
+    background:rgba(236,72,153,.08);
+}
+.tool-btn .tool-icon{font-size:25px;margin-bottom:10px}
+.tool-btn strong{display:block;font-size:14px;margin-bottom:5px}
+.tool-btn span{font-size:11px;color:#9292a5;line-height:1.4}
+
+.interactive-card{cursor:pointer}
+.card-action{
+    display:inline-flex;
+    margin-top:15px;
+    padding:9px 12px;
+    border:1px solid rgba(236,72,153,.25);
+    border-radius:9px;
+    color:#f9a8d4;
+    background:rgba(236,72,153,.07);
+    font-size:12px;
+    font-weight:700;
+}
+.card-action:hover{background:rgba(236,72,153,.14)}
+
+.family-status{
+    margin-top:12px;
+    padding:11px 12px;
+    border-radius:11px;
+    background:rgba(34,197,94,.08);
+    border:1px solid rgba(34,197,94,.18);
+    color:#9af0ba;
+    font-size:12px;
+}
+.chat-launch{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:1200;
+    border:0;
+    border-radius:50px;
+    padding:14px 18px;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+    box-shadow:0 15px 35px rgba(236,72,153,.3);
+}
+.chat-panel{
+    width:min(430px,calc(100vw - 28px));
+    height:min(650px,calc(100vh - 40px));
+    display:flex;
+    flex-direction:column;
+    background:#11111d;
+}
+.chat-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:15px 18px;
+    border-bottom:1px solid var(--border);
+}
+.chat-head small{display:block;color:#8f8fa1;margin-top:3px}
+.chat-close{
+    width:34px;height:34px;border:0;border-radius:9px;
+    background:#242434;color:#ddd;cursor:pointer;font-size:18px;
+}
+.chat-messages{
+    flex:1;
+    overflow:auto;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.chat-bubble{
+    max-width:82%;
+    padding:10px 12px;
+    border-radius:14px;
+    font-size:13px;
+    line-height:1.5;
+    white-space:pre-wrap;
+}
+.chat-bubble.me{
+    align-self:flex-end;
+    background:linear-gradient(135deg,#8b5cf6,#ec4899);
+}
+.chat-bubble.family{
+    align-self:flex-start;
+    background:#242434;
+    color:#e7e7ef;
+}
+.chat-time{font-size:9px;opacity:.65;margin-top:5px}
+.chat-compose{
+    display:flex;
+    gap:8px;
+    padding:12px;
+    border-top:1px solid var(--border);
+}
+.chat-compose input{
+    flex:1;
+    min-width:0;
+    height:44px;
+    padding:0 12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:#0b0b14;
+    color:#fff;
+    outline:none;
+}
+.chat-compose button{
+    width:48px;border:0;border-radius:10px;
+    background:linear-gradient(135deg,var(--pink),var(--purple));
+    color:#fff;cursor:pointer;font-size:17px;
+}
+.info-modal-box{width:min(760px,calc(100vw - 30px));max-height:85vh;overflow:auto}
+.info-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px
+}
+.info-item{
+    padding:15px;border:1px solid var(--border);border-radius:14px;
+    background:rgba(255,255,255,.035)
+}
+.info-item h4{margin-bottom:7px}
+.info-item p{margin:0;color:#9d9dac;font-size:12px;line-height:1.65}
+.info-list{margin:12px 0 0 18px;color:#a5a5b5;font-size:13px;line-height:1.8}
+.modal-top{
+    display:flex;justify-content:space-between;align-items:center;gap:10px
+}
+.close-x{
+    border:0;background:#292938;color:#ddd;border-radius:9px;
+    width:36px;height:36px;cursor:pointer;font-size:18px
+}
+.action-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
+.small-action{
+    border:1px solid var(--border);background:rgba(255,255,255,.06);
+    color:#ddd;border-radius:10px;padding:10px 13px;cursor:pointer
+}
+.small-action.primary{
+    background:linear-gradient(135deg,var(--pink),var(--purple));color:#fff;border:0
+}
+.share-result{
+    margin-top:12px;padding:11px;border-radius:10px;
+    background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.18);
+    color:#b9d9ff;font-size:12px;word-break:break-word
+}
+.family-list{display:grid;gap:10px;margin-top:15px}
+.family-row{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:13px;border:1px solid var(--border);border-radius:13px;
+    background:rgba(255,255,255,.035)
+}
+.family-row small{display:block;color:#8f8fa0;margin-top:4px}
+.badge-online{font-size:10px;color:#7ee7a8;background:rgba(34,197,94,.1);padding:5px 8px;border-radius:20px}
+@media(max-width:1050px){
+    .quick-tools-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:650px){
+    .quick-tools{padding:0 5% 25px}
+    .quick-tools-grid{grid-template-columns:1fr 1fr}
+    .info-grid{grid-template-columns:1fr}
+    .chat-launch{right:15px;bottom:15px}
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     AUTHENTICATION PAGE
+===================================================== -->
+
+<div id="authPage">
+
+<div class="auth-container">
+
+
+    <!-- LEFT BRANDING -->
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            🛡️
+        </div>
+
+        <h1>
+            Women Safety
+            <br>
+            <span class="gradient-text">
+                & Mobile App Awareness
+            </span>
+        </h1>
+
+        <p>
+            A smart digital platform designed to promote
+            women's safety, digital awareness and responsible
+            mobile application usage.
+        </p>
+
+        <div class="brand-feature">
+            <div class="brand-feature-icon">🛡️</div>
+            Women Safety Awareness
+        </div>
+
+        <div class="brand-feature">
+            <div class="brand-feature-icon">📱</div>
+            Mobile App Safety
+        </div>
+
+        <div class="brand-feature">
+            <div class="brand-feature-icon">🔐</div>
+            Privacy & Digital Security
+        </div>
+
+        <div class="brand-feature">
+            <div class="brand-feature-icon">🚨</div>
+            Emergency Support
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT AUTH -->
+
+    <div class="auth-side">
+
+        <div class="auth-content">
+
+
+            <!-- LOGIN -->
+
+            <section
+                id="loginScreen"
+                class="auth-screen active"
+            >
+
+                <h2 class="auth-title">
+                    Welcome Back
+                </h2>
+
+                <p class="auth-subtitle">
+                    Sign in to access your safety dashboard
+                </p>
+
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="loginEmail"
+                                type="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                            <span class="input-icon">
+                                ✉
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="loginPassword"
+                                type="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <span
+                                class="input-icon"
+                                onclick="togglePassword('loginPassword',this)"
+                            >
+                                ◉
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            Remember me
+
+                        </label>
+
+
+                        <span
+                            class="link"
+                            onclick="showAuth('forgotScreen')"
+                        >
+                            Forgot password?
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn"
+                        type="submit"
+                    >
+                        Sign In
+                    </button>
+
+
+                    <div class="divider">
+                        OR
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="google-btn"
+                        onclick="googleLogin()"
+                    >
+
+                        <span class="google-logo">
+                            G
+                        </span>
+
+                        Continue with Google
+
+                    </button>
+
+
+                    <div
+                        id="loginMessage"
+                        class="message"
+                    ></div>
+
+                </form>
+
+
+                <div class="bottom-text">
+
+                    Don't have an account?
+
+                    <span
+                        onclick="showAuth('signupScreen')"
+                    >
+                        Create Account
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- SIGN UP -->
+
+            <section
+                id="signupScreen"
+                class="auth-screen"
+            >
+
+                <div
+                    class="back"
+                    onclick="showAuth('loginScreen')"
+                >
+                    ← Back to Sign In
+                </div>
+
+                <h2 class="auth-title">
+                    Create Account
+                </h2>
+
+                <p class="auth-subtitle">
+                    Join the Women Safety community
+                </p>
+
+
+                <form id="signupForm">
+
+                    <div class="input-group">
+
+                        <label>Full Name</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="signupName"
+                                type="text"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                            <span class="input-icon">
+                                👤
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="signupEmail"
+                                type="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                            <span class="input-icon">
+                                ✉
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="signupPassword"
+                                type="password"
+                                placeholder="Create a password"
+                                minlength="6"
+                                required
+                            >
+
+                            <span
+                                class="input-icon"
+                                onclick="togglePassword('signupPassword',this)"
+                            >
+                                ◉
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label>Confirm Password</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="confirmPassword"
+                                type="password"
+                                placeholder="Confirm your password"
+                                required
+                            >
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            required
+                        >
+
+                        I agree to Terms & Privacy Policy
+
+                    </label>
+
+                    <br>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Create Account
+                    </button>
+
+
+                    <div
+                        id="signupMessage"
+                        class="message"
+                    ></div>
+
+                </form>
+
+
+                <div class="bottom-text">
+
+                    Already have an account?
+
+                    <span
+                        onclick="showAuth('loginScreen')"
+                    >
+                        Sign In
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- FORGOT -->
+
+            <section
+                id="forgotScreen"
+                class="auth-screen"
+            >
+
+                <div
+                    class="back"
+                    onclick="showAuth('loginScreen')"
+                >
+                    ← Back to Sign In
+                </div>
+
+                <div style="font-size:45px;margin-bottom:15px">
+                    🔑
+                </div>
+
+                <h2 class="auth-title">
+                    Forgot Password?
+                </h2>
+
+                <p class="auth-subtitle">
+                    Enter your registered email to reset
+                    your password.
+                </p>
+
+
+                <form id="forgotForm">
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <input
+                                id="forgotEmail"
+                                type="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn"
+                        type="submit"
+                    >
+                        Send Reset Link
+                    </button>
+
+
+                    <div
+                        id="forgotMessage"
+                        class="message"
+                    ></div>
+
+                </form>
+
+            </section>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HOME PAGE
+===================================================== -->
+
+<div id="homePage">
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="nav-logo">
+
+        <div class="nav-logo-icon">
+            🛡️
+        </div>
+
+        <span>
+            Women Safety
+        </span>
+
+    </div>
+
+
+    <div
+        class="nav-links"
+        id="navLinks"
+    >
+
+        <a
+            class="active"
+            onclick="scrollToSection('home')"
+        >
+            Home
+        </a>
+
+        <a onclick="scrollToSection('about')">
+            About
+        </a>
+
+        <a onclick="scrollToSection('apps')">
+            Safety Apps
+        </a>
+
+        <a onclick="scrollToSection('features')">
+            Features
+        </a>
+
+        <a onclick="scrollToSection('tips')">
+            Safety Tips
+        </a>
+
+        <a onclick="scrollToSection('emergency')">
+            Emergency
+        </a>
+
+        <a onclick="scrollToSection('contact')">
+            Contact
+        </a>
+
+        <a onclick="openFamilyChat()">
+            💬 Family Chat
+        </a>
+
+    </div>
+
+
+    <div class="nav-user">
+
+        <span
+            class="user-name"
+            id="navUserName"
+        >
+            User
+        </span>
+
+        <button
+            class="logout-btn"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div>
+
+        <div class="hero-badge">
+            🛡️ YOUR DIGITAL SAFETY COMPANION
+        </div>
+
+
+        <h1>
+
+            Stay Safe.
+            <br>
+
+            <span>
+                Stay Aware.
+            </span>
+
+        </h1>
+
+
+        <p>
+            Empowering women with digital safety awareness,
+            emergency resources, useful safety applications
+            and practical safety information.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="hero-btn primary"
+                onclick="scrollToSection('tips')"
+            >
+                Explore Safety Tips
+            </button>
+
+            <button
+                class="hero-btn secondary"
+                onclick="scrollToSection('apps')"
+            >
+                Explore Safety Apps
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOS -->
+
+    <div class="sos-wrapper">
+
+        <div class="sos-card">
+
+            <div class="sos-header">
+
+                <h3>
+                    Emergency SOS
+                </h3>
+
+                <span class="status">
+                    ● SYSTEM READY
+                </span>
+
+            </div>
+
+
+            <button
+                class="sos-button"
+                onclick="openSOS()"
+            >
+                SOS
+            </button>
+
+
+            <p class="sos-note">
+
+                Press SOS only during an emergency.
+                You can quickly contact family or
+                emergency services.
+
+            </p>
+
+
+            <div class="emergency-actions">
+
+                <button
+                    class="emergency-btn"
+                    onclick="callFamily()"
+                >
+                    👨‍👩‍👧
+                    <br>
+                    Contact Family
+                </button>
+
+                <button
+                    class="emergency-btn"
+                    onclick="callPolice()"
+                >
+                    👮
+                    <br>
+                    Contact Police
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- ================= QUICK ACTION CENTER ================= -->
+<section class="quick-tools" id="quickTools">
+    <div class="quick-tools-grid">
+        <button class="tool-btn" onclick="openFamilyChat()">
+            <div class="tool-icon">💬</div>
+            <strong>Family Chat</strong>
+            <span>Send a message to your trusted family contact.</span>
+        </button>
+        <button class="tool-btn" onclick="manageFamilyContacts()">
+            <div class="tool-icon">👨‍👩‍👧</div>
+            <strong>Family Contacts</strong>
+            <span>Add, edit and call trusted emergency contacts.</span>
+        </button>
+        <button class="tool-btn" onclick="shareLiveLocation()">
+            <div class="tool-icon">📍</div>
+            <strong>Share Location</strong>
+            <span>Use your browser location and prepare a shareable link.</span>
+        </button>
+        <button class="tool-btn" onclick="openSafetyPlanner()">
+            <div class="tool-icon">🛡️</div>
+            <strong>Safety Planner</strong>
+            <span>Create a personal emergency plan and checklist.</span>
+        </button>
+        <button class="tool-btn" onclick="openInfo('privacy')">
+            <div class="tool-icon">🔐</div>
+            <strong>Privacy Center</strong>
+            <span>Learn how to protect your phone, accounts and data.</span>
+        </button>
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section
+    class="section"
+    id="about"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            ABOUT PLATFORM
+        </span>
+
+        <h2>
+            Safety Starts With Awareness
+        </h2>
+
+        <p>
+            Our platform provides awareness about women's
+            safety, mobile applications, digital privacy,
+            emergency support and responsible technology use.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                🛡️
+            </div>
+
+            <h3>Women Safety</h3>
+            <button class="card-action" onclick="openInfo('womenSafety')">View detailed guide →</button>
+
+            <p>
+                Learn practical methods to stay safe
+                in public spaces, online environments
+                and everyday situations.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📱
+            </div>
+
+            <h3>Mobile Awareness</h3>
+            <button class="card-action" onclick="openInfo('mobile')">Explore mobile safety →</button>
+
+            <p>
+                Understand useful mobile applications
+                and how technology can support personal
+                safety.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔐
+            </div>
+
+            <h3>Digital Privacy</h3>
+            <button class="card-action" onclick="openInfo('privacy')">Open privacy guide →</button>
+
+            <p>
+                Protect passwords, personal information,
+                location data and social media accounts.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SAFETY APPS -->
+
+<section
+    class="section"
+    id="apps"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            SAFETY APPS
+        </span>
+
+        <h2>
+            Useful Safety Resources
+        </h2>
+
+        <p>
+            Learn about emergency and safety-related
+            mobile resources that can assist during
+            difficult situations.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card app-card">
+
+            <div class="app-icon">
+                🚨
+            </div>
+
+            <div>
+
+                <h3>Emergency Services</h3>
+                <button class="card-action" onclick="openInfo('emergencyServices')">View services →</button>
+
+                <p>
+                    Keep emergency service numbers
+                    easily accessible.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card app-card">
+
+            <div class="app-icon">
+                📍
+            </div>
+
+            <div>
+
+                <h3>Location Sharing</h3>
+                <button class="card-action" onclick="shareLiveLocation()">Share location →</button>
+
+                <p>
+                    Use trusted contacts and location
+                    sharing when appropriate.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card app-card">
+
+            <div class="app-icon">
+                📞
+            </div>
+
+            <div>
+
+                <h3>Emergency Calling</h3>
+                <button class="card-action" onclick="callPolice()">Call emergency →</button>
+
+                <p>
+                    Keep important emergency contacts
+                    ready on your phone.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<section
+    class="section"
+    id="features"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            PLATFORM FEATURES
+        </span>
+
+        <h2>
+            Everything in One Place
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                🚨
+            </div>
+
+            <h3>SOS System</h3>
+            <button class="card-action" onclick="openSOS()">Test SOS flow →</button>
+
+            <p>
+                Quick access to family and emergency
+                contacts during urgent situations.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                👨‍👩‍👧
+            </div>
+
+            <h3>Family Contact</h3>
+            <button class="card-action" onclick="manageFamilyContacts()">Manage contacts →</button>
+
+            <p>
+                Quickly connect with a trusted family
+                member through your emergency contact.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📚
+            </div>
+
+            <h3>Safety Information</h3>
+            <button class="card-action" onclick="openInfo('safetyInfo')">Read detailed information →</button>
+
+            <p>
+                Access safety tips, digital awareness
+                and emergency information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SAFETY TIPS -->
+
+<section
+    class="section"
+    id="tips"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            SAFETY TIPS
+        </span>
+
+        <h2>
+            Stay Smart. Stay Safe.
+        </h2>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔐
+            </div>
+
+            <h3>
+                Protect Passwords
+            </h3>
+            <button class="card-action" onclick="openInfo(\'passwords\')">Read detailed steps →</button>
+
+            <p>
+                Use strong, unique passwords and avoid
+                sharing them with others.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📍
+            </div>
+
+            <h3>
+                Be Careful With Location
+            </h3>
+            <button class="card-action" onclick="openInfo(\'location\')">Read detailed steps →</button>
+
+            <p>
+                Review location permissions and only
+                share location with trusted people.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🚫
+            </div>
+
+            <h3>
+                Avoid Suspicious Links
+            </h3>
+            <button class="card-action" onclick="openInfo(\'links\')">Read detailed steps →</button>
+
+            <p>
+                Do not open unknown links or provide
+                personal information to suspicious users.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📱
+            </div>
+
+            <h3>
+                Keep Phone Updated
+            </h3>
+            <button class="card-action" onclick="openInfo(\'updates\')">Read detailed steps →</button>
+
+            <p>
+                Install trusted system and application
+                updates to improve security.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                👥
+            </div>
+
+            <h3>
+                Tell Someone You Trust
+            </h3>
+            <button class="card-action" onclick="openInfo(\'trusted\')">Read detailed steps →</button>
+
+            <p>
+                During an unsafe situation, contact
+                a trusted person whenever possible.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🚨
+            </div>
+
+            <h3>
+                Emergency First
+            </h3>
+            <button class="card-action" onclick="openInfo(\'emergency\')">Read detailed steps →</button>
+
+            <p>
+                If there is immediate danger, contact
+                appropriate emergency services.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- EMERGENCY -->
+
+<section
+    class="section emergency-section"
+    id="emergency"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            EMERGENCY
+        </span>
+
+        <h2>
+            Need Immediate Help?
+        </h2>
+
+        <p>
+            In India, 112 is the unified emergency
+            response number.
+        </p>
+
+    </div>
+
+
+    <div class="emergency-number">
+        112
+    </div>
+
+
+    <a
+        href="tel:112"
+        class="call-112"
+    >
+        📞 Call Emergency 112
+    </a>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section
+    class="section"
+    id="contact"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            CONTACT
+        </span>
+
+        <h2>
+            Emergency Contacts
+        </h2>
+
+        <p>
+            Keep your trusted contacts ready before
+            an emergency occurs.
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <div class="contact-card">
+
+            <h3>
+                👨‍👩‍👧 Family / Trusted Person
+            </h3>
+
+            <p>
+                Add a trusted family member's phone
+                number to quickly contact them during
+                an emergency.
+            </p>
+
+            <button
+                class="hero-btn primary"
+                style="margin-top:15px"
+                onclick="setFamilyNumber()"
+            >
+                Set Family Number
+            </button>
+
+        </div>
+
+
+
+            <div class="family-status" id="familyStatus">No trusted family contact configured yet.</div>
+            <div class="action-row">
+                <button class="small-action primary" onclick="manageFamilyContacts()">Manage Contacts</button>
+                <button class="small-action" onclick="openFamilyChat()">💬 Open Family Chat</button>
+            </div>
+
+        <div class="contact-card">
+
+            <h3>
+                👮 Police / Emergency
+            </h3>
+
+            <p>
+                For immediate emergency assistance
+                in India, use the national emergency
+                number.
+            </p>
+
+            <a href="tel:112">
+                📞 Call 112
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- MORE INFORMATION -->
+
+<section
+    class="section"
+    id="more"
+>
+
+    <div class="section-header">
+
+        <span class="tag">
+            MORE INFORMATION
+        </span>
+
+        <h2>
+            Build Your Safety Plan
+        </h2>
+
+        <p>
+            Save important contacts, understand your
+            surroundings and keep your phone ready
+            for emergencies.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">
+                📝
+            </div>
+
+            <h3>
+                Emergency Plan
+            </h3>
+            <button class="card-action" onclick="openInfo(\'planner\')">Open detailed guide →</button>
+
+            <p>
+                Decide who you will contact and where
+                you can go if you feel unsafe.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🗺️
+            </div>
+
+            <h3>
+                Safe Places
+            </h3>
+            <button class="card-action" onclick="openInfo(\'safePlaces\')">Open detailed guide →</button>
+
+            <p>
+                Be familiar with nearby police stations,
+                hospitals and other safe public locations.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                📱
+            </div>
+
+            <h3>
+                Mobile Readiness
+            </h3>
+            <button class="card-action" onclick="openInfo(\'readiness\')">Open detailed guide →</button>
+
+            <p>
+                Keep your phone charged and emergency
+                contacts easily accessible.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<button class="chat-launch" onclick="openFamilyChat()">💬 Chat with Family</button>
+
+<footer>
+
+    © 2026 Women Safety & Mobile App Awareness
+    <br>
+    Designed for digital safety awareness.
+
+</footer>
+
+</div>
+
+
+
+
+<!-- ================= FAMILY CHAT MODAL ================= -->
+<div class="modal" id="familyChatModal">
+    <div class="modal-box chat-panel">
+        <div class="chat-head">
+            <div>
+                <strong>💬 Family Safety Chat</strong>
+                <small id="chatContactLabel">Trusted family contact</small>
+            </div>
+            <button class="chat-close" onclick="closeFamilyChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-compose">
+            <input id="chatInput" type="text" placeholder="Type a safety message..." maxlength="500"
+                   onkeydown="if(event.key==='Enter') sendFamilyMessage()">
+            <button onclick="sendFamilyMessage()">➤</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= INFORMATION MODAL ================= -->
+<div class="modal" id="infoModal">
+    <div class="modal-box info-modal-box">
+        <div class="modal-top">
+            <div>
+                <div class="tag" id="infoTag">SAFETY INFORMATION</div>
+                <h2 id="infoTitle">Safety Guide</h2>
+            </div>
+            <button class="close-x" onclick="closeInfo()">×</button>
+        </div>
+        <div id="infoBody"></div>
+        <div class="action-row">
+            <button class="small-action" onclick="closeInfo()">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= FAMILY CONTACTS MODAL ================= -->
+<div class="modal" id="familyModal">
+    <div class="modal-box info-modal-box">
+        <div class="modal-top">
+            <div>
+                <div class="tag">TRUSTED CONTACTS</div>
+                <h2>Family & Emergency Contacts</h2>
+            </div>
+            <button class="close-x" onclick="closeFamilyManager()">×</button>
+        </div>
+        <p>Add people you trust. This demo stores contacts only in this browser.</p>
+        <div class="input-group">
+            <label>Contact Name</label>
+            <input class="modal-input" id="familyName" placeholder="e.g. Mom">
+        </div>
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input class="modal-input" id="familyPhone" type="tel" placeholder="+91 9876543210">
+        </div>
+        <div class="input-group">
+            <label>Relationship</label>
+            <input class="modal-input" id="familyRelation" placeholder="Mother / Father / Sister">
+        </div>
+        <button class="primary-btn" onclick="addFamilyContact()">+ Add Trusted Contact</button>
+        <div class="family-list" id="familyList"></div>
+    </div>
+</div>
+
+<!-- ================= SAFETY PLANNER MODAL ================= -->
+<div class="modal" id="plannerModal">
+    <div class="modal-box info-modal-box">
+        <div class="modal-top">
+            <div>
+                <div class="tag">PERSONAL SAFETY PLAN</div>
+                <h2>My Emergency Plan</h2>
+            </div>
+            <button class="close-x" onclick="closeSafetyPlanner()">×</button>
+        </div>
+        <p>Create a simple plan before you need it. Your checklist is saved locally in this demo.</p>
+        <div class="info-grid">
+            <label class="info-item"><input type="checkbox" data-plan="trusted"> I have at least one trusted contact.</label>
+            <label class="info-item"><input type="checkbox" data-plan="charged"> My phone is charged.</label>
+            <label class="info-item"><input type="checkbox" data-plan="112"> I know how to contact 112.</label>
+            <label class="info-item"><input type="checkbox" data-plan="route"> I know a safe route/place nearby.</label>
+            <label class="info-item"><input type="checkbox" data-plan="privacy"> My important accounts use strong passwords.</label>
+            <label class="info-item"><input type="checkbox" data-plan="location"> I can share my location with someone trusted.</label>
+        </div>
+        <div class="action-row">
+            <button class="small-action primary" onclick="saveSafetyPlan()">Save Plan</button>
+            <button class="small-action" onclick="clearSafetyPlan()">Reset</button>
+        </div>
+    </div>
+</div>
+
+<!-- =====================================================
+     SOS MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="sosModal"
+>
+
+    <div class="modal-box">
+
+        <h2>
+            🚨 Emergency SOS
+        </h2>
+
+        <p>
+            Are you sure you want to activate the SOS
+            system? This will provide quick options
+            to contact your emergency contacts.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="cancel"
+                onclick="closeSOS()"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="confirm"
+                onclick="activateSOS()"
+            >
+                Activate SOS
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   STORAGE
+===================================================== */
+
+const ACCOUNT_KEY = "womenSafetyAccount";
+const FAMILY_KEY = "womenSafetyFamily";
+const LOGIN_KEY = "womenSafetyLoggedIn";
+
+
+/* =====================================================
+   AUTH SCREEN
+===================================================== */
+
+function showAuth(id){
+
+    document
+        .querySelectorAll(".auth-screen")
+        .forEach(screen=>{
+            screen.classList.remove("active");
+        });
+
+    document
+        .getElementById(id)
+        .classList.add("active");
+}
+
+
+/* =====================================================
+   PASSWORD TOGGLE
+===================================================== */
+
+function togglePassword(id,icon){
+
+    const input =
+        document.getElementById(id);
+
+    if(input.type === "password"){
+
+        input.type = "text";
+        icon.style.color="#f472b6";
+
+    }else{
+
+        input.type="password";
+        icon.style.color="#777789";
+
+    }
+}
+
+
+/* =====================================================
+   CREATE ACCOUNT
+===================================================== */
+
+document
+.getElementById("signupForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("signupName").value.trim();
+
+    const email =
+        document.getElementById("signupEmail").value.trim();
+
+    const password =
+        document.getElementById("signupPassword").value;
+
+    const confirm =
+        document.getElementById("confirmPassword").value;
+
+    const message =
+        document.getElementById("signupMessage");
+
+
+    if(password.length < 6){
+
+        showMessage(
+            message,
+            "Password must contain at least 6 characters.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(password !== confirm){
+
+        showMessage(
+            message,
+            "Passwords do not match.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    /*
+       Save account in browser.
+       This is suitable for a frontend college demo.
+       Real production authentication needs a backend/Firebase.
+    */
+
+    const account = {
+        name:name,
+        email:email,
+        password:password
+    };
+
+
+    localStorage.setItem(
+        ACCOUNT_KEY,
+        JSON.stringify(account)
+    );
+
+
+    showMessage(
+        message,
+        "✓ Account created successfully! You can now sign in.",
+        "success"
+    );
+
+
+    setTimeout(()=>{
+
+        document.getElementById("loginEmail").value=email;
+
+        document.getElementById("loginPassword").value="";
+
+        showAuth("loginScreen");
+
+    },1500);
+
+});
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+document
+.getElementById("loginForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    const savedAccount =
+        localStorage.getItem(ACCOUNT_KEY);
+
+
+    if(!savedAccount){
+
+        showMessage(
+            message,
+            "No account found. Please create an account first.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const account =
+        JSON.parse(savedAccount);
+
+
+    if(
+        email !== account.email ||
+        password !== account.password
+    ){
+
+        showMessage(
+            message,
+            "Incorrect email or password.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    localStorage.setItem(
+        LOGIN_KEY,
+        "true"
+    );
+
+
+    document.getElementById("navUserName")
+        .textContent=account.name;
+
+
+    document.getElementById("authPage")
+        .style.display="none";
+
+
+    document.getElementById("homePage")
+        .style.display="block";
+
+
+    window.scrollTo(0,0);
+
+});
+
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+document
+.getElementById("forgotForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const email =
+        document.getElementById("forgotEmail").value.trim();
+
+    const saved =
+        localStorage.getItem(ACCOUNT_KEY);
+
+    const message =
+        document.getElementById("forgotMessage");
+
+
+    if(!saved){
+
+        showMessage(
+            message,
+            "No registered account found.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    const account =
+        JSON.parse(saved);
+
+
+    if(email !== account.email){
+
+        showMessage(
+            message,
+            "This email is not registered.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    showMessage(
+        message,
+        "✓ Reset request accepted. For this demo, create a new password through your backend/Firebase flow.",
+        "success"
+    );
+
+});
+
+
+/* =====================================================
+   GOOGLE LOGIN DEMO
+===================================================== */
+
+function googleLogin(){
+
+    alert("Google Sign-In is a demo button in this frontend. Real Google authentication requires Firebase Authentication or another OAuth backend.");
+
+}
+
+
+/* =====================================================
+   SHOW MESSAGE
+===================================================== */
+
+function showMessage(element,text,type){
+
+    element.textContent=text;
+
+    element.className=
+        "message "+type;
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+function logout(){
+
+    localStorage.removeItem(LOGIN_KEY);
+
+    document.getElementById("homePage")
+        .style.display="none";
+
+    document.getElementById("authPage")
+        .style.display="flex";
+
+    showAuth("loginScreen");
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+function scrollToSection(id){
+
+    const element =
+        document.getElementById(id);
+
+    if(element){
+
+        element.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    }
+
+    document
+        .getElementById("navLinks")
+        .classList.remove("open");
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("open");
+
+}
+
+
+/* =====================================================
+   SOS
+===================================================== */
+
+function openSOS(){
+
+    document
+        .getElementById("sosModal")
+        .classList.add("show");
+
+}
+
+
+function closeSOS(){
+
+    document
+        .getElementById("sosModal")
+        .classList.remove("show");
+
+}
+
+
+function activateSOS(){
+
+    closeSOS();
+
+
+    const family =
+        localStorage.getItem(FAMILY_KEY);
+
+
+    if(family){
+
+        const choice =
+            confirm(
+                "SOS ACTIVATED!\n\n" +
+                "Do you want to call your family emergency contact?"
+            );
+
+
+        if(choice){
+
+            window.location.href=
+                "tel:"+family;
+
+            return;
+        }
+
+    }
+
+
+    const police =
+        confirm(
+            "SOS ACTIVATED!\n\n" +
+            "No family call was made.\n\n" +
+            "Do you want to call Emergency 112?"
+        );
+
+
+    if(police){
+
+        window.location.href="tel:112";
+
+    }
+
+}
+
+
+/* =====================================================
+   FAMILY CONTACT
+===================================================== */
+
+function setFamilyNumber(){
+
+    const current =
+        localStorage.getItem(FAMILY_KEY) || "";
+
+
+    const number =
+        prompt(
+            "Enter trusted family/emergency contact number:",
+            current
+        );
+
+
+    if(number){
+
+        localStorage.setItem(
+            FAMILY_KEY,
+            number
+        );
+
+        alert(
+            "✓ Family emergency contact saved."
+        );
+
+    }
+
+}
+
+
+function callFamily(){
+
+    const family =
+        localStorage.getItem(FAMILY_KEY);
+
+
+    if(!family){
+
+        setFamilyNumber();
+
+        return;
+    }
+
+
+    window.location.href=
+        "tel:"+family;
+
+}
+
+
+/* =====================================================
+   POLICE
+===================================================== */
+
+function callPolice(){
+
+    const confirmCall =
+        confirm(
+            "Call Emergency 112?"
+        );
+
+
+    if(confirmCall){
+
+        window.location.href=
+            "tel:112";
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTO LOGIN CHECK
+===================================================== */
+
+window.addEventListener("load",function(){
+
+    const loggedIn =
+        localStorage.getItem(LOGIN_KEY);
+
+    const accountData =
+        localStorage.getItem(ACCOUNT_KEY);
+
+
+    if(loggedIn === "true" && accountData){
+
+        const account =
+            JSON.parse(accountData);
+
+
+        document.getElementById("navUserName")
+            .textContent=account.name;
+
+
+        document.getElementById("authPage")
+            .style.display="none";
+
+        document.getElementById("homePage")
+            .style.display="block";
+
+    }
+
+});
+
+
+/* ================= PROFESSIONAL INTERACTIVE MODULES ================= */
+
+const FAMILY_CONTACTS_KEY = "womenSafetyFamilyContacts";
+const CHAT_KEY = "womenSafetyFamilyChat";
+const PLAN_KEY = "womenSafetyPlan";
+
+const INFO_DATA = {
+    womenSafety:{
+        tag:"WOMEN SAFETY",
+        title:"Women Safety: Practical Guide",
+        body:`<div class="info-grid">
+        <div class="info-item"><h4>Before Travel</h4><p>Tell a trusted person where you are going when appropriate. Keep your phone charged and emergency contacts accessible.</p></div>
+        <div class="info-item"><h4>In Public</h4><p>Stay aware of your surroundings, prefer well-lit public areas and move toward people or staffed locations if you feel unsafe.</p></div>
+        <div class="info-item"><h4>During Threat</h4><p>Prioritize getting to a safer location. Call emergency services when immediate danger exists and contact a trusted person when possible.</p></div>
+        <div class="info-item"><h4>After an Incident</h4><p>Reach a safe place, seek medical help if needed, preserve relevant evidence and report the incident through appropriate authorities.</p></div>
+        </div>`
+    },
+    mobile:{
+        tag:"MOBILE AWARENESS",
+        title:"Mobile Safety & Readiness",
+        body:`<ul class="info-list"><li>Keep your operating system and apps updated.</li><li>Use a screen lock and biometric protection.</li><li>Install apps from trusted sources and review permissions.</li><li>Keep emergency numbers and trusted contacts easy to reach.</li><li>Back up important data and enable device recovery features.</li><li>Avoid using unknown public charging/data accessories when you cannot trust the source.</li></ul>`
+    },
+    privacy:{
+        tag:"PRIVACY CENTER",
+        title:"Digital Privacy Protection",
+        body:`<div class="info-grid">
+        <div class="info-item"><h4>Passwords</h4><p>Use long, unique passwords. Never share passwords or one-time verification codes.</p></div>
+        <div class="info-item"><h4>Permissions</h4><p>Review camera, microphone, contacts and location permissions regularly. Give access only when needed.</p></div>
+        <div class="info-item"><h4>Social Media</h4><p>Review privacy settings, avoid posting sensitive real-time location details and be cautious with unknown requests.</p></div>
+        <div class="info-item"><h4>Phishing</h4><p>Verify links, senders and urgent requests independently before entering credentials or personal information.</p></div>
+        </div>`
+    },
+    emergencyServices:{
+        tag:"EMERGENCY SERVICES",
+        title:"Emergency Help",
+        body:`<p>For immediate danger in India, use the appropriate emergency service. This website provides a quick call action for 112. Keep in mind that a browser website cannot guarantee emergency dispatch or location transmission.</p><div class="action-row"><button class="small-action primary" onclick="callPolice()">📞 Call 112</button><button class="small-action" onclick="shareLiveLocation()">📍 Prepare Location</button></div>`
+    },
+    safetyInfo:{
+        tag:"SAFETY INFORMATION",
+        title:"Complete Safety Information",
+        body:`<div class="info-grid">
+        <div class="info-item"><h4>Physical Safety</h4><p>Stay alert, trust your instincts and move toward safe, populated or staffed locations when needed.</p></div>
+        <div class="info-item"><h4>Digital Safety</h4><p>Protect accounts, verify messages and control app permissions.</p></div>
+        <div class="info-item"><h4>Emergency Readiness</h4><p>Set trusted contacts before an emergency and know your local emergency options.</p></div>
+        <div class="info-item"><h4>Communication</h4><p>Use the Family Chat for a demo conversation and call a trusted person during a real emergency when safe to do so.</p></div>
+        </div>`
+    },
+    passwords:{
+        tag:"SAFETY TIP",
+        title:"Strong Password Checklist",
+        body:`<ul class="info-list"><li>Use a unique password for important accounts.</li><li>Prefer long passphrases.</li><li>Never share passwords or OTPs.</li><li>Turn on multi-factor authentication where available.</li><li>Change credentials if you believe an account is compromised.</li></ul>`
+    },
+    location:{
+        tag:"SAFETY TIP",
+        title:"Location Sharing",
+        body:`<p>Share your location only with people you trust and only when appropriate. Review which apps can access location. This website can request browser location permission, but it does not automatically send your location to family.</p><div class="action-row"><button class="small-action primary" onclick="shareLiveLocation()">📍 Prepare Location Share</button></div>`
+    },
+    links:{
+        tag:"SAFETY TIP",
+        title:"Suspicious Links & Messages",
+        body:`<ul class="info-list"><li>Do not click unexpected links.</li><li>Check the sender independently.</li><li>Never enter passwords or OTPs on suspicious pages.</li><li>Urgency and threats are common warning signs.</li><li>If an account is compromised, change its password from the official app/site.</li></ul>`
+    },
+    updates:{
+        tag:"SAFETY TIP",
+        title:"Keep Your Phone Updated",
+        body:`<p>Install operating system and trusted application updates. Updates can include security fixes, compatibility improvements and bug fixes. Keep enough storage and battery available for updates.</p>`
+    },
+    trusted:{
+        tag:"SAFETY TIP",
+        title:"Tell Someone You Trust",
+        body:`<p>Having a trusted contact can reduce isolation during stressful situations. Configure your family contacts in this app before you need them. For immediate danger, prioritize emergency services and a safe location.</p><div class="action-row"><button class="small-action primary" onclick="manageFamilyContacts()">👨‍👩‍👧 Manage Contacts</button><button class="small-action" onclick="openFamilyChat()">💬 Family Chat</button></div>`
+    },
+    emergency:{
+        tag:"SAFETY TIP",
+        title:"Emergency First",
+        body:`<p>If there is immediate danger, move toward safety and contact appropriate emergency services. Use the SOS feature as a quick interface, but remember that a browser-only demo cannot provide guaranteed background tracking or automatic emergency dispatch.</p><div class="action-row"><button class="small-action primary" onclick="callPolice()">📞 Call 112</button><button class="small-action" onclick="openSOS()">🚨 Open SOS</button></div>`
+    },
+    planner:{
+        tag:"SAFETY PLAN",
+        title:"Emergency Plan",
+        body:`<p>A useful emergency plan identifies trusted people, safe places, communication methods and emergency numbers before an incident occurs.</p><div class="action-row"><button class="small-action primary" onclick="openSafetyPlanner()">🛡️ Open My Safety Planner</button></div>`
+    },
+    safePlaces:{
+        tag:"SAFETY PLAN",
+        title:"Safe Places",
+        body:`<p>Identify nearby places where staff or other people can help, such as police facilities, hospitals, security desks, trusted homes or other appropriate public locations. This demo does not automatically verify nearby facilities.</p><div class="action-row"><button class="small-action primary" onclick="shareLiveLocation()">📍 Get My Current Location</button></div>`
+    },
+    readiness:{
+        tag:"SAFETY PLAN",
+        title:"Mobile Readiness",
+        body:`<ul class="info-list"><li>Charge your phone before travel.</li><li>Keep emergency contacts accessible.</li><li>Keep the device updated.</li><li>Use a secure lock screen.</li><li>Know how to make an emergency call.</li><li>Keep essential identification and medical information accessible where appropriate.</li></ul>`
+    }
+};
+
+function openInfo(key){
+    const data = INFO_DATA[key] || INFO_DATA.safetyInfo;
+    document.getElementById("infoTag").textContent=data.tag;
+    document.getElementById("infoTitle").textContent=data.title;
+    document.getElementById("infoBody").innerHTML=data.body;
+    document.getElementById("infoModal").classList.add("show");
+}
+function closeInfo(){ document.getElementById("infoModal").classList.remove("show"); }
+
+function getContacts(){
+    try{return JSON.parse(localStorage.getItem(FAMILY_CONTACTS_KEY)) || [];}
+    catch(e){return [];}
+}
+function saveContacts(list){
+    localStorage.setItem(FAMILY_CONTACTS_KEY, JSON.stringify(list));
+    const first=list[0];
+    if(first) localStorage.setItem(FAMILY_KEY, first.phone);
+}
+function manageFamilyContacts(){
+    document.getElementById("familyModal").classList.add("show");
+    renderFamilyContacts();
+}
+function closeFamilyManager(){ document.getElementById("familyModal").classList.remove("show"); }
+
+function addFamilyContact(){
+    const name=document.getElementById("familyName").value.trim();
+    const phone=document.getElementById("familyPhone").value.trim();
+    const relation=document.getElementById("familyRelation").value.trim() || "Trusted person";
+    if(!name || !phone){ alert("Please enter contact name and phone number."); return; }
+    const list=getContacts();
+    list.push({id:Date.now(),name,phone,relation});
+    saveContacts(list);
+    document.getElementById("familyName").value="";
+    document.getElementById("familyPhone").value="";
+    document.getElementById("familyRelation").value="";
+    renderFamilyContacts();
+    updateFamilyStatus();
+}
+function renderFamilyContacts(){
+    const box=document.getElementById("familyList");
+    const list=getContacts();
+    if(!list.length){
+        box.innerHTML='<div class="info-item"><p>No trusted contacts yet. Add one above.</p></div>';
+        return;
+    }
+    box.innerHTML=list.map(c=>`
+        <div class="family-row">
+            <div><strong>${escapeHtml(c.name)}</strong><small>${escapeHtml(c.relation)} • ${escapeHtml(c.phone)}</small></div>
+            <div class="action-row" style="margin:0">
+                <button class="small-action" onclick="callContact('${encodeURIComponent(c.phone)}')">📞 Call</button>
+                <button class="small-action" onclick="removeFamilyContact(${c.id})">Remove</button>
+            </div>
+        </div>`).join("");
+}
+function removeFamilyContact(id){
+    const list=getContacts().filter(c=>c.id!==id);
+    saveContacts(list);
+    renderFamilyContacts();
+    updateFamilyStatus();
+}
+function callContact(encoded){
+    const phone=decodeURIComponent(encoded);
+    window.location.href="tel:"+phone;
+}
+function updateFamilyStatus(){
+    const list=getContacts();
+    const status=document.getElementById("familyStatus");
+    if(status) status.textContent=list.length ? `${list.length} trusted contact${list.length>1?"s":""} configured.` : "No trusted family contact configured yet.";
+}
+
+function openFamilyChat(){
+    const list=getContacts();
+    const fallback=localStorage.getItem(FAMILY_KEY);
+    document.getElementById("chatContactLabel").textContent=list[0] ? `${list[0].name} • ${list[0].phone}` : (fallback ? `Family • ${fallback}` : "Add a trusted contact for a complete setup");
+    document.getElementById("familyChatModal").classList.add("show");
+    renderChat();
+    setTimeout(()=>document.getElementById("chatInput").focus(),100);
+}
+function closeFamilyChat(){ document.getElementById("familyChatModal").classList.remove("show"); }
+function getChat(){
+    try{return JSON.parse(localStorage.getItem(CHAT_KEY)) || [];}
+    catch(e){return [];}
+}
+function renderChat(){
+    const box=document.getElementById("chatMessages");
+    const messages=getChat();
+    if(!messages.length){
+        box.innerHTML=`<div class="chat-bubble family">Family Chat is ready. Send a message such as “I reached safely” or “Please call me”.<div class="chat-time">Demo conversation</div></div>`;
+    }else{
+        box.innerHTML=messages.map(m=>`<div class="chat-bubble ${m.from==='me'?'me':'family'}">${escapeHtml(m.text)}<div class="chat-time">${escapeHtml(m.time)}</div></div>`).join("");
+    }
+    box.scrollTop=box.scrollHeight;
+}
+function sendFamilyMessage(){
+    const input=document.getElementById("chatInput");
+    const text=input.value.trim();
+    if(!text) return;
+    const messages=getChat();
+    messages.push({from:"me",text,time:new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})});
+    localStorage.setItem(CHAT_KEY,JSON.stringify(messages));
+    input.value="";
+    renderChat();
+
+    /* Demo reply only. Real family messaging needs a backend/realtime service. */
+    setTimeout(()=>{
+        const updated=getChat();
+        updated.push({from:"family",text:"Message received. Stay safe. I’m checking in with you.",time:new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})});
+        localStorage.setItem(CHAT_KEY,JSON.stringify(updated));
+        renderChat();
+    },700);
+}
+
+function shareLiveLocation(){
+    if(!navigator.geolocation){
+        alert("Geolocation is not supported by this browser.");
+        return;
+    }
+    navigator.geolocation.getCurrentPosition(pos=>{
+        const lat=pos.coords.latitude.toFixed(6);
+        const lon=pos.coords.longitude.toFixed(6);
+        const mapUrl=`https://www.google.com/maps?q=${lat},${lon}`;
+        const result=document.getElementById("infoBody");
+        document.getElementById("infoTag").textContent="LOCATION READY";
+        document.getElementById("infoTitle").textContent="Current Location";
+        document.getElementById("infoBody").innerHTML=`<p>Your browser provided the following location.</p><div class="share-result">📍 ${lat}, ${lon}<br>${mapUrl}</div><div class="action-row"><button class="small-action primary" onclick="copyText('${mapUrl}')">Copy Map Link</button><button class="small-action" onclick="shareText('${mapUrl}')">Share</button></div><p style="margin-top:12px;color:#8f8fa0;font-size:11px">This demo does not silently send your location to family. You choose whether to copy/share it.</p>`;
+        document.getElementById("infoModal").classList.add("show");
+    },err=>{
+        alert("Location permission was not granted or the location could not be obtained.");
+    },{enableHighAccuracy:true,timeout:10000,maximumAge:0});
+}
+async function copyText(text){
+    try{await navigator.clipboard.writeText(text); alert("Location link copied.");}
+    catch(e){prompt("Copy this location link:",text);}
+}
+async function shareText(text){
+    if(navigator.share){try{await navigator.share({title:"My safety location",text:"My current location:",url:text});}catch(e){}}
+    else copyText(text);
+}
+
+function openSafetyPlanner(){
+    document.getElementById("plannerModal").classList.add("show");
+    loadSafetyPlan();
+}
+function closeSafetyPlanner(){document.getElementById("plannerModal").classList.remove("show");}
+function loadSafetyPlan(){
+    let data={};
+    try{data=JSON.parse(localStorage.getItem(PLAN_KEY)) || {};}catch(e){}
+    document.querySelectorAll("[data-plan]").forEach(cb=>cb.checked=!!data[cb.dataset.plan]);
+}
+function saveSafetyPlan(){
+    const data={};
+    document.querySelectorAll("[data-plan]").forEach(cb=>data[cb.dataset.plan]=cb.checked);
+    localStorage.setItem(PLAN_KEY,JSON.stringify(data));
+    alert("✓ Safety plan saved in this browser.");
+}
+function clearSafetyPlan(){
+    localStorage.removeItem(PLAN_KEY);
+    document.querySelectorAll("[data-plan]").forEach(cb=>cb.checked=false);
+}
+function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+/* Make the existing single family number usable by the new manager. */
+function migrateFamilyContact(){
+    const old=localStorage.getItem(FAMILY_KEY);
+    const list=getContacts();
+    if(old && !list.length){
+        list.push({id:Date.now(),name:"Primary Family Contact",phone:old,relation:"Trusted person"});
+        saveContacts(list);
+    }
+}
+
+/* Close modals with background click */
+["infoModal","familyModal","familyChatModal","plannerModal"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener("click",e=>{if(e.target===el) el.classList.remove("show");});
+});
+
+/* Keep the old single-number contact button compatible and update UI on load. */
+const oldSetFamilyNumber = setFamilyNumber;
+setFamilyNumber = function(){
+    manageFamilyContacts();
+};
+
+window.addEventListener("load",function(){
+    migrateFamilyContact();
+    updateFamilyStatus();
+});
+
+</script>
+
+</body>
+</html>
